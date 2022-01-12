@@ -108,5 +108,29 @@ namespace ExampleConsoleApp.Models
             }
 
         }
+
+        public void Delete( int Id)
+        {
+            string query = "delete from bebida " + " where id=@id";
+            using (var connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    var command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@id", Id);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"Ha ocurrido un Error {e.Message}");
+                    connection.Close();
+                }
+
+            }
+
+        }
     }
 }
