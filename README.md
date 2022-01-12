@@ -1,0 +1,1 @@
+Small example of how the logic can be for a beverage dispensing machine, with a database in SQL Server and also the connection to a MySQL database will be placed, common themes of object-oriented programming, inheritance, interface, are applied, polymorphism, serealization, and also HTTP requests
